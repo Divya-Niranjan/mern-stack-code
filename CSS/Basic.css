@@ -1,0 +1,39 @@
+h2 {
+    color: #1D3557;
+    background-color: rgb(168, 218, 220);
+}
+
+button {
+    color: lightcoral;
+    background-color: peachpuff;
+}
+
+p {
+    color: olive;
+    background: rgb(241, 250, 238);
+}
+
+body {
+    background-color: #ffff;
+}
+
+
+h1 {
+    text-align: center;
+    font-weight: 600;
+    text-decoration: #f78120 underline ;
+    letter-spacing: 10px;
+    font-size: 10px;
+    /* the font should support your machine for it to work */
+    /* font-family: Segoe UI, Futura, Arial, sans-serif; */
+    font-family: monospace;
+}
+
+a {
+    text-decoration: underline wavy;
+}
+
+p {
+    line-height: 1;
+}
+ */

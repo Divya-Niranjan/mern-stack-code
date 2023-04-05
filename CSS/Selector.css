@@ -1,0 +1,127 @@
+.tag {
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 16px;
+}
+
+/* /* * {
+    background-color: cyan;
+} */
+/*
+body {
+    background-color: #f1faee;
+}
+
+button {
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+h1,h2 {
+    color: #1d3557;
+}
+
+#signup{
+    background-color: #1d3557;
+    color: #f1faee;
+}
+
+span {
+    color: #457b9d;
+}
+
+.tag {
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 16px;
+}
+
+.post a {
+    color: #457b9d;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Descendant selector */
+footer a {
+    color: #e63946;
+}
+
+/*Ajacent Selector- Selects the p which comes directly after the h1 */
+
+h2 + button {
+    font-size: 20px;
+}
+
+/* Selects only the a which are direct children of the footer */
+footer > a {
+    color: #457b9d;
+}
+
+/* Attribute Selector */
+
+input[type="password"] {
+    color: greenyellow;
+}
+
+a[href*="google"]{
+    color: yellow;
+}
+
+
+/* pseduo classes */
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+
+.post button:active {
+    background-color: #02c39a;
+}
+
+/* Let's you style a particular part of the selected element */
+/* pseduo elements */
+
+h2::first-letter {
+    font-size: 50px;
+}
+
+p::first-line {
+    color: purple;
+}
+
+p::selection {
+    background-color: #fcbf49;
+}
+
+/* These 2 are conflicting. Above one is more specific than the lower one so the above one wins. This is because the lower one is applying to all buttons */
+/* id>class>element */
+/* order also matters. If you have 2 selectors with same specificity, the one which comes later in the css file wins */ 
+.post button:hover {
+    background-color: #e63946;
+    color: #f1faee;
+}
+
+button:hover {
+    background-color: olive;
+}
+
+button {
+    background-color: magenta !important;
+}
+
+/* Selects the second element of div siblings */
+div:nth-of-type(2) {
+    background: red;
+  }
+  
+  /* Selects the second li element in a list */
+  li:nth-of-type(2) {
+    background: lightgreen;
+  }
+  
+  /* Selects every third element among any group of siblings */
+  :nth-of-type(3) {
+    background: yellow;
+  } */
