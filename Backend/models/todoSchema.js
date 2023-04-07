@@ -11,6 +11,9 @@ let todoSchema = new Schema({
   },
   created:{
     type: Date,
+  },
+  userId:{
+    type:mongoose.Types.ObjectId,
   }
 });
 

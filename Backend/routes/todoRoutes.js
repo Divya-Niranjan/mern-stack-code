@@ -1,19 +1,29 @@
 const express = require("express");
 const router = express.Router();
 const Todo = require("../models/todoSchema");
+const ObjectId = require("mongoose").Types.ObjectId;
+const { requireSignin } = require("../middleware/index");
 
-router.get("/", async (req, res) => {
+router.get("/get/:id", requireSignin, async (req, res) => {
+  console.log(req.body);
   try {
-    const todos = await Todo.find();
+    let userId = req.params.id;
+    console.log(userId);
+    const todos = await Todo.findOne({ userId: new ObjectId(userId) });
+
     res.json(todos);
   } catch (error) {
     res.json({ message: error });
   }
 });
 
-router.post("/todo", async (req, res) => {
-  console.log(req.body); 
+router.post("/todo/:id", requireSignin, async (req, res) => {
+  console.log(req.body);
+  const { user } = req;
+
+  let userId = req.params.id;
   const todo = new Todo({
+    userId: userId,
     title: req.body.title,
     description: req.body.description,
     created: req.body.created,
@@ -31,7 +41,6 @@ router.post("/todo", async (req, res) => {
 
 router.get("/:todoId", async (req, res) => {
   try {
-    
     const todo = await Todo.findById(req.params.todoId);
     res.json(todo);
   } catch (error) {

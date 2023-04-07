@@ -5,6 +5,7 @@ const User = require("../models/userSchema");
 const bcrypt = require("bcryptjs");
 
 router.post("/signup", async (req, res) => {
+  console.log(req.body);
   req.body.password = await bcrypt.hash(req.body.password, 10);
   let user = new User({
     email: req.body.email,
@@ -13,7 +14,7 @@ router.post("/signup", async (req, res) => {
   try {
     let savedUser = await user.save();
     const token = jwt.sign({ userId: savedUser._id }, "my-secret-key");
-    res.status(200).send({ token });
+    res.status(200).send({ token,userId: savedUser._id, email: savedUser.email });
   } catch (err) {
     return res.status(401).send("Invalid email or password");
   }
@@ -34,7 +35,7 @@ router.post("/login", async (req, res) => {
     if (result) {
       // sign token and send it in response
       const token = jwt.sign({ email: getUser.email }, "my-secret-key");
-      res.json({ token });
+      res.json({ token,userId: getUser._id, email: getUser.email });
     } else {
       res.status(400).json({ error: "Invalid email or password" });
     }
